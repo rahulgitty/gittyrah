@@ -1,0 +1,28 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<body>
+	<div class = "container" style="height:400px; width:500px; background-color:gold; border:2px solid gold; border-radius:10px;">
+		<h4><span class="glyphicon glyphicon-pencil">SignUp</h4>
+		<br>
+		{% from "_formhelpers.html" import render_field %}
+		<form method=post action="/signUp/">
+			<dl>
+				{{render_field(form.username)}}
+				{{render_field(form.email)}}
+				{{render_field(form.password)}}
+				{{render_field(form.confirm)}}
+				{{render_field(form.accept_tcp)}}
+			</dl>
+			<input class="btn btn-info" type="submit" value="SignUp">
+		</form>
+		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</div>
+</body>
+
+{% endblock %}

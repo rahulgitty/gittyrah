@@ -1,0 +1,25 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<body>
+	<div class="container" style="height:250px; border:2px solid gold; border-radius: 10px; margin-top:10px; width:500px;">
+	<br>
+		<h4><span class="glyphicon glyphicon-log-in"> SignIn</h4><br/>
+			<form action="" class="form-inline"  method="post">
+				<input type="text" style="width:400px;" class="form-control" placeholder="Username" name="username" value="{{ request.form.username}}"><br/><br/>
+				
+				<input type="password" style="width:400px;" class="form-control" placeholder="Password" name="password" value="{{ request.form.password}}"><br/><br/>
+
+				 <a href="/signUp/"><button type="button" style="height:30px; padding-top:5px; margin-right:200px" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> Sign_Up</button></a>
+
+				<input class="btn btn-info" style="height:30px; padding-top:5px;" type="submit" value="SignIn">
+			</form>
+			<p>{{error}}</p>		
+	<br>
+
+	</div>
+
+
+</body>
+{% endblock %}

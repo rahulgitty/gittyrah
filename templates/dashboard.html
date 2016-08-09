@@ -1,0 +1,52 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<div style="width:600px;">
+
+ <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#Brand_Factory" aria-controls="Brand_Factory" role="tab" data-toggle="tab">Brand Factory</a></li>
+    <li role="presentation"><a href="#Special_Store" aria-controls="Special_Store" role="tab" data-toggle="tab">Special Store</a><li/>
+    <li role="presentation"><a href="#Sales_Deals" aria-controls="Sales_Deals" role="tab" data-toggle="tab">Sales & Deals</a></li>
+    <li role="presentation"><a href="#Hot_Purchase" aria-controls="Hot_Purchase" role="tab" data-toggle="tab">Hot Purchase</a></li>
+  </ul>
+
+  
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="Brand_Factory"> Welcome to Brand Factory, purchase all factory brands here to your cart 
+
+      <ul><br/>
+        {% for t in TOPIC_DICT["Brand Factory"] %}
+          <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+        {% endfor %}
+        </ul>
+
+    </div>
+    
+    <div role="tabpanel" class="tab-pane fade" id="Special_Store"> Get latest store items for fashion update!!
+      <ul><br/>
+        {% for t in TOPIC_DICT["Special Store"] %}
+          <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+        {% endfor %}
+        </ul> 
+    </div>
+    
+    <div role="tabpanel" class="tab-pane fade" id="Sales_Deals"> You deserve a hot Sales & Deals with all items in the store!!<br/>
+      <ul><br/>
+        {% for t in TOPIC_DICT["Sales & Deals"] %}
+          <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+        {% endfor %}
+        </ul> 
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="Hot_Purchase"> Visit out Hot Purchase store to get the latest new arrivals category and bag your items!!<br/> 
+      <ul><br/>
+        {% for t in TOPIC_DICT["Hot Purchase"] %}
+          <li><a href="{{t[1]}}">{{t[0]}}</a></li>
+        {% endfor %}
+        </ul> 
+    </div>
+  </div>
+
+</div>
+{% endblock %}
